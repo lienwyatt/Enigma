@@ -11,7 +11,14 @@ int main()
     s.SecondRotorPosition = 1;
     s.ThirdRotorNumber = 1;
     s.ThirdRotorPosition = 1;
-
+    s.plugboard = {{'A', 'B'},
+                   {'C', 'D'},
+                   {'E', 'F'},
+                   {'G', 'H'},
+                   {'B', 'A'},
+                   {'D', 'C'},
+                   {'F', 'E'},
+                   {'H', 'G'}, };
 
     
     Encryption encryptor(s);

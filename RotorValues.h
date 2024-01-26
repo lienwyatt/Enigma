@@ -22,3 +22,4 @@ const std::vector<std::string> rotors =
     "VZBRGITYUPSDNHLXAWMJQOFECK"
 };
 
+

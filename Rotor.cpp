@@ -16,16 +16,19 @@ unsigned char Rotor::translate(unsigned char inputChar) const
         std::cout << "incorrect character " << inputChar << " passed to Rotor::translate()" << std::endl;
     }
     //example: E would return the 4th (0 indexed) character in the mapping
-    return mapping[inputChar - 'A'];
+    //std::cout << "translting " << ((inputChar + position) % NUM_IN_ALPHABET) << " - A which comes out to " << ((inputChar + position) % NUM_IN_ALPHABET) - 'A' << std::endl;
+
+    //the 0th item in mapping is what A maps to. Translate whichever character is entered and shift the amount the rotor has turned. 
+    return mapping[(inputChar - 'A' + position) % NUM_IN_ALPHABET];
 }
 
 bool Rotor::increment()
 {
-    if (position == NUM_IN_ALPHABET - 1)
+    position++;
+    position = position % NUM_IN_ALPHABET;
+    if (position == 0)
     {
-        position = 0;
         return true;
     }
-    position++;
     return false;
 }

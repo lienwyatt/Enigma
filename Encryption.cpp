@@ -5,14 +5,21 @@
 #include "RotorValues.h"
 
 Encryption::Encryption(const Settings& initialSettings) :
+    plugboard(initialSettings.plugboard),
     r1(rotors[initialSettings.FirstRotorNumber], initialSettings.FirstRotorNumber),
     r2(rotors[initialSettings.SecondRotorNumber], initialSettings.SecondRotorPosition),
-    r3(rotors[initialSettings.ThirdRotorNumber], initialSettings.ThirdRotorPosition)
-{}
+    r3(rotors[initialSettings.ThirdRotorNumber], initialSettings.ThirdRotorPosition){}
 
 unsigned char Encryption::encryptCharacter(char plaintextChar)
+
 {
     unsigned char character = toupper(plaintextChar);
+    
+    if (plugboard.find(character) != plugboard.end())
+    {
+        character = plugboard[character];
+    }
+    
     //pre-increment the rotor.
     bool incrementNextRotor = r1.increment();
     character = r1.translate(character);

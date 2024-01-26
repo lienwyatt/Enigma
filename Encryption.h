@@ -24,6 +24,7 @@ private:
 	Rotor r1;
 	Rotor r2;
 	Rotor r3;
+    std::map<unsigned char, unsigned char> plugboard;
 public:
 	Encryption(const Settings& initialSettings);
 	unsigned char encryptCharacter(const char plaintextChar);
