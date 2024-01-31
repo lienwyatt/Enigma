@@ -60,7 +60,7 @@ unsigned char Encryption::EncryptCharacter(char plaintextChar)
     std::cout << character << std::endl;
 
     std::cout << "Before plugboad " << character << std::endl;
-
+    //std::cout << "size of plugboard" << plugboard.size();
     //send the result through the plugboard again
     if (plugboard.find(character) != plugboard.end())
     {

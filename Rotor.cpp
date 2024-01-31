@@ -20,26 +20,18 @@ unsigned char Rotor::Translate(unsigned char inputChar) const
     {
         std::cout << "incorrect character " << inputChar << " passed to Rotor::Translate()" << std::endl;
     }
-    //example: E would return the 4th (0 indexed) character in the mapping
-    //std::cout << "translating " << ((inputChar + position) % NUM_CHARS_IN_ALPHABET) << " - A which comes out to " << ((inputChar + position) % NUM_CHARS_IN_ALPHABET) - 'A' << std::endl;
 
-    //the 0th item in mapping is what A maps to. Translate whichever character is entered and shift the amount the rotor has turned. 
-    //std::cout << "translated " << inputChar << " to " << mapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] << std::endl;
-    return mapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET];
+    return ((mapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] - position) - 'A') % NUM_CHARS_IN_ALPHABET + 'A';
 }
 
 unsigned char Rotor::InverseTranslate(unsigned char inputChar) const
 {
-    //std::cout << "about to translate char " << inputChar << std::endl;
     if (inputChar > 'Z' || inputChar < 'A')
     {
         std::cout << "incorrect character " << inputChar << " passed to Rotor::InverseTranslate()" << std::endl;
     }
-    //example: E would return the 4th (0 indexed) character in the mapping
-    //std::cout << "translting " << ((inputChar + position) % NUM_CHARS_IN_ALPHABET) << " - A which comes out to " << ((inputChar + position) % NUM_CHARS_IN_ALPHABET) - 'A' << std::endl;
 
-    //the 0th item in mapping is what A maps to. Translate whichever character is entered and shift the amount the rotor has turned. 
-    return inverseMapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET];
+    return ((inverseMapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] - position) - 'A') % NUM_CHARS_IN_ALPHABET + 'A';
 }
 
 bool Rotor::Increment()

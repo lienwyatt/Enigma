@@ -14,7 +14,6 @@ int main()
     s.r2 = r;
     r.rotorNumber = 3;
     s.r3 = r;
-    /*
     s.plugboard = {{'A', 'B'},
                    {'C', 'D'},
                    {'E', 'F'},
@@ -23,8 +22,6 @@ int main()
                    {'D', 'C'},
                    {'F', 'E'},
                    {'H', 'G'}};
-    */
-    s.plugboard = {};
     s.reflectorType = 'B';
 
     
