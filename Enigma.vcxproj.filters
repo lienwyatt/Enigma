@@ -29,10 +29,16 @@
     <ClInclude Include="Encryption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RotorValues.h">
+    <ClInclude Include="M3_Values.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rotor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RotorSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnigmaSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

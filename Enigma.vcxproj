@@ -133,8 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Encryption.h" />
+    <ClInclude Include="EnigmaSettings.h" />
+    <ClInclude Include="RotorSettings.h" />
     <ClInclude Include="Rotor.h" />
-    <ClInclude Include="RotorValues.h" />
+    <ClInclude Include="M3_Values.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

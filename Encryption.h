@@ -2,21 +2,10 @@
 #pragma once
 
 #include "Rotor.h"
+#include "EnigmaSettings.h"
 
 #include <string>
 #include <map>
-
-
-struct Settings 
-{
-    unsigned int FirstRotorNumber;
-    unsigned int SecondRotorNumber;
-    unsigned int ThirdRotorNumber;
-    unsigned int FirstRotorPosition;
-    unsigned int SecondRotorPosition;
-    unsigned int ThirdRotorPosition;
-    std::map<unsigned char, unsigned char> plugboard;
-};
 
 class Encryption
 {
@@ -25,8 +14,9 @@ private:
 	Rotor r2;
 	Rotor r3;
     std::map<unsigned char, unsigned char> plugboard;
+	std::string reflector;
 public:
-	Encryption(const Settings& initialSettings);
-	unsigned char encryptCharacter(const char plaintextChar);
-	std::string encryptString(const std::string& plaintextStr);
+	Encryption(const EnigmaSettings& initialSettings);
+	unsigned char EncryptCharacter(const char plaintextChar);
+	std::string EncryptString(const std::string& plaintextStr);
 };
