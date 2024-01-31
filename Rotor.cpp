@@ -21,7 +21,7 @@ unsigned char Rotor::Translate(unsigned char inputChar) const
         std::cout << "incorrect character " << inputChar << " passed to Rotor::Translate()" << std::endl;
     }
 
-    return ((mapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] - position) - 'A') % NUM_CHARS_IN_ALPHABET + 'A';
+    return ((mapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] - position) - 'A' + NUM_CHARS_IN_ALPHABET) % NUM_CHARS_IN_ALPHABET + 'A';
 }
 
 unsigned char Rotor::InverseTranslate(unsigned char inputChar) const
@@ -31,7 +31,7 @@ unsigned char Rotor::InverseTranslate(unsigned char inputChar) const
         std::cout << "incorrect character " << inputChar << " passed to Rotor::InverseTranslate()" << std::endl;
     }
 
-    return ((inverseMapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] - position) - 'A') % NUM_CHARS_IN_ALPHABET + 'A';
+    return ((inverseMapping[(inputChar - 'A' + position) % NUM_CHARS_IN_ALPHABET] - position) - 'A' + NUM_CHARS_IN_ALPHABET) % NUM_CHARS_IN_ALPHABET + 'A';
 }
 
 bool Rotor::Increment()
