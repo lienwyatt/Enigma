@@ -1,14 +1,12 @@
 # Enigma Keyboard
 
-https://github.com/lienwyatt/Enigma-Keyboard/assets/31666811/e23cc895-4dbc-4ba5-aca0-58f6c432f26a
-
-
-
 ## Objective
 This application allows the user to replicate the behavior of the Enigma machine on a Razer keyboard. When a key is pressed, the corresponding encrypted cyphertext letter lights up on the keyboard. A window launches where Enigma settings can be customized. The window can then be minimized and the encryption will continue to display on the keyboard while other applications are used. 
 
 ## Background
 The Enigma machine was a cipher device used to encode and decode German messages during WWII. The cipher was famously cracked by a team of codebreakers led by Alan Turing, helping the Allies to win WWII. For some good background on Enigma, check out [this video](https://www.youtube.com/watch?v=G2_Q9FoD-oQ). Because a pressed key never encrypts to itself in Enigma, you should always see a different key light up when one is pressed. 
+
+https://github.com/lienwyatt/Enigma-Keyboard/assets/31666811/e23cc895-4dbc-4ba5-aca0-58f6c432f26a
 
 ## Method
 Each key is registered as a hotkey to detect keypresses. This allows the keyboard to continue displaying the encrypted letters while using other applications. A different Chroma animation was created for each letter using the online [Chroma Editor](https://chroma.razer.com/ChromaEditor/). Swapping between these animations was done done with the official Razer Chroma C++ API and [sample app](https://github.com/razerofficial/CSDK_SampleApp). The sample app was forked as a submodule and adapted for use in this project. 
