@@ -46,12 +46,14 @@ int main()
 
     Enigma encryptor(settings);    
     helper::DisplayEnigmaSettings(settings);
-    std::cout << std::endl << "Beginning Encryption" << std::endl;
+    std::cout << std::endl << "Beginning Encryption" << std::endl << std::endl;
 
     //Begin listening to keypresses
     //register all alphabet keys as hotkeys
     KeypressProcessor keyProcessor;
 
+    std::cout << "     Translation               Rotor Positions " << std::endl;
+    std::cout << "    -------------             -----------------" << std::endl;
 
     //Wait for a Keypress. When a letter is pressed, encrypt it 
     // and display the cyphertext letter to the keyboard
@@ -61,7 +63,8 @@ int main()
         if ((inputCharacter >= 'A' && inputCharacter <= 'Z') || (inputCharacter >= 'a' && inputCharacter <= 'z'))
         {
             unsigned char result = encryptor.EncryptCharacter(inputCharacter);
-            std::cout << inputCharacter << " --> " << result << std::endl;
+            std::cout << "       " << inputCharacter << " --> " << result << "                     ";
+            encryptor.PrintDisplay();
             keyboardInterface.DisplayCharacter(result);
         }
      }

@@ -110,3 +110,9 @@ std::string Enigma::EncryptString(const std::string& plaintextStr)
 
     return ciphertextStr;
 }
+
+
+void Enigma::PrintDisplay()
+{
+    std::cout << "|" << leftRotor_.GetCurrentLetter() << "|" << centerRotor_.GetCurrentLetter() << "|" << rightRotor_.GetCurrentLetter() << "|" <<std::endl;
+}

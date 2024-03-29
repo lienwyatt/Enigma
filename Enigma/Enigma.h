@@ -36,4 +36,7 @@ public:
 	// Encrypt a string according to Enigma. Encrypt all rotors accordingly.
 	// Returns Cyphertext string.
 	std::string EncryptString(const std::string& plaintextStr);
+
+	//prints to stdout the values of the rotor display characters
+	void PrintDisplay();
 };
