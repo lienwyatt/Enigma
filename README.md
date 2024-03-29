@@ -1,6 +1,6 @@
 # Enigma Keyboard
 
-Resources/demo.mov
+https://github.com/lienwyatt/Enigma-Keyboard/Resources/demo.mov
 
 ## Objective
 This application allows the user to replicate the behavior of the Enigma machine on a Razer keyboard. When a key is pressed, the corresponding encrypted cyphertext letter lights up on the keyboard. A window launches where Enigma settings can be customized. The window can then be minimized and the encryption will continue to display on the keyboard while other applications are used. 
