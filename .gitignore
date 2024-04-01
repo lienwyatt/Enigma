@@ -1,4 +1,3 @@
 x64/
-Release/
-Debug/
+Win32/
 .vs/

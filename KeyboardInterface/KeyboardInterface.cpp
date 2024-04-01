@@ -15,10 +15,9 @@ const char BLANK_ANIMATION_CHAR = '_';
 
 KeyboardInterface::KeyboardInterface(std::string filepath) : filePath_(filepath), postfix_(KEYBOARD_POSTFIX)
 {
-    ChromaSDK::ChromaAnimationAPI::InitAPI();
     if (!ChromaSDK::ChromaAnimationAPI::GetIsInitializedAPI())
     {
-        std::cerr << "failed to init API" << std::endl;
+        std::cerr << "KeyboardInterface(): No chroma API initialized" << std::endl;
     }
     DisplayBlankKeyboard();
 }

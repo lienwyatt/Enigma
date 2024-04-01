@@ -3,6 +3,7 @@
 #include <chrono>
 #include <iostream>
 #include <conio.h>
+#include <memory>
 
 #include "KeypressProcessor.h"
 #include "Enigma.h"
@@ -18,9 +19,13 @@ int main()
     helper::PrintAppDescription();
 
     //initalize the interface between this application and the keyboard 
-    razerInit::InitializeKeyboard();
-    std::string ANIMATIONS_PATH = "Animations/";
-    KeyboardInterface keyboardInterface(ANIMATIONS_PATH);
+    bool sucessfullyInitedChroma = (razerInit::InitializeKeyboard() == 0);
+    std::unique_ptr<KeyboardInterface> keyboardInterface = nullptr;
+    if (sucessfullyInitedChroma)
+    {
+        std::string ANIMATIONS_PATH = "Animations/";
+        keyboardInterface = std::make_unique<KeyboardInterface>(ANIMATIONS_PATH);
+    }
 
     // Get the enigma settings from the user
     EnigmaSettings settings = helper::GetDefaultEnigmaSettings();
@@ -65,7 +70,13 @@ int main()
             unsigned char result = encryptor.EncryptCharacter(inputCharacter);
             std::cout << "       " << inputCharacter << " --> " << result << "                     ";
             encryptor.PrintDisplay();
-            keyboardInterface.DisplayCharacter(result);
+
+            // The application should be able to run even when no keyboard is used. 
+            // So no warnings/errors when not actually displaying to keyboard.
+            if (sucessfullyInitedChroma)
+            {
+                keyboardInterface->DisplayCharacter(result);
+            }
         }
      }
 
