@@ -168,6 +168,7 @@ copy /y chroma\*.dll "$(outdir)" </Command>
     <ClInclude Include="KeyboardInterface\HelperFunctions.h" />
     <ClInclude Include="KeyboardInterface\KeyboardInterface.h" />
     <ClInclude Include="KeyboardInterface\KeypressProcessor.h" />
+    <ClInclude Include="KeyboardInterface\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chroma\ChromaAnimationAPI.cpp" />
@@ -180,6 +181,7 @@ copy /y chroma\*.dll "$(outdir)" </Command>
     <ClCompile Include="KeyboardInterface\HelperFunctions.cpp" />
     <ClCompile Include="KeyboardInterface\KeyboardInterface.cpp" />
     <ClCompile Include="KeyboardInterface\KeypressProcessor.cpp" />
+    <ClCompile Include="KeyboardInterface\Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
