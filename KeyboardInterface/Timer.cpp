@@ -2,6 +2,7 @@
 #include <thread>
 #include <chrono>
 #include <iostream>
+#include <Windows.h>
 
 
 const int SLEEP_PRECISION_MS = 30;
@@ -12,6 +13,23 @@ Timer::Timer() : inited_(false),
                  isRunning_(false),
                  duration_(std::chrono::milliseconds(0))
 {}
+
+Timer::~Timer()
+{
+    try
+    {
+        //only kill the timer when it is not running
+        while (isRunning_)
+        {
+            Sleep(SLEEP_PRECISION_MS);
+        }
+    }
+    catch (...)
+    {
+        std::cout << "Error in Timer destructor";
+        //just continue
+    }
+}
 
 void Timer::Init(std::function<void(void*)> callbackFunction, void* thisPtr, unsigned int duration) 
 {

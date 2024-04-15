@@ -6,12 +6,13 @@
 #include <functional>
 #include <chrono>
 #include <mutex>
+#include <atomic>
 
 class Timer
 {
 private:
     std::thread timer_;
-    bool isRunning_;
+    std::atomic<bool> isRunning_;
 
     //member function callback
     std::function<void(void*)> callback_;
@@ -27,6 +28,9 @@ private:
 public:
     // this timer class will always call the same callback function
     Timer();
+
+    // Destructor
+    virtual ~Timer();
 
     // set all the parameters. CallbackFunction is a static member function to be called when
     // the timer expires. thisPtr is the object to call callbackFunction() from. duration is the

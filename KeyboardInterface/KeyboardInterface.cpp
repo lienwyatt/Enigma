@@ -49,5 +49,13 @@ void KeyboardInterface::DisplayBlankKeyboardStatic(void* thisPtr)
 
 KeyboardInterface::~KeyboardInterface()
 {
-    ChromaSDK::ChromaAnimationAPI::UninitAPI();
+    try
+    {
+        timer_.~Timer();
+        ChromaSDK::ChromaAnimationAPI::UninitAPI();
+    }
+    catch (...)
+    {
+        std::cout << "Error in KeyboardInterface destructor";
+    }
 }

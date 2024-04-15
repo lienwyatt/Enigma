@@ -10,6 +10,10 @@ namespace helper
     // input number should be from 1-9
     std::string ToRoman(int numChar);
 
+    // converts lowercase characters to uppercase
+    // returns the original character if not lowercase
+    unsigned char ToUpper(unsigned char character);
+
     // prints description of the Enigma Keyboard application
     void PrintAppDescription();
 

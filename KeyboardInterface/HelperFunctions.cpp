@@ -37,6 +37,16 @@ std::string helper::ToRoman(int digit)
     }
 }
 
+unsigned char helper::ToUpper(unsigned char character)
+{
+    if (character >= 'a' && character <= 'z')
+    {
+
+        return 'A' - 'a' + character;
+    }
+    return character;
+}
+
 void helper::PrintAppDescription()
 {
     
@@ -415,27 +425,21 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
 
         if (key1 == ' ')
         {
-            return settings;
+            break;
         }
         key2 = _getche();
         std::cout << std::endl;
 
         if (key2 == ' ')
         {
-            return settings;
+            break;
         }
 
         //capitalize
-        if (key1 >= 'a' && key1 <= 'z')
-        {
-            key1 += 'A' - 'a';
-        }
+        key1 = ToUpper(key1);
 
         //capitalize
-        if (key2 >= 'a' && key2 <= 'z')
-        {
-            key2 += 'A' - 'a';
-        }
+        key2 = ToUpper(key2);
 
         if (key1 == key2)
         {
@@ -443,7 +447,7 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
             continue;
         }
 
-        if (key1 < 'A' || key1 > 'Z' || key1 < 'A' || key2 > 'Z')
+        if (key1 < 'A' || key2 > 'Z')
         {
             std::cout << "Incorrect input" << std::endl;
             continue;
@@ -461,9 +465,10 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
         {
             std::cout << "Keys may only be used in plugboard once" << std::endl;
         }
-        if (settings.plugboard.size() == 10)
+        if (settings.plugboard.size() == 20)
         {
-            //in general 10 was the max number of plugboard connections used, even though there was a theoretical limit of 13
+            // in general 10 was the max number of plugboard connections used, even though there was a theoretical limit of 13
+            // each pair is added twice
             std::cout << "max plugboard size reached" << std::endl;
             break;
         }

@@ -1,6 +1,9 @@
 #pragma once
 
 
+//ASCII ESC
+extern const unsigned char ESC_KEY;
+
 class KeypressProcessor
 {
 private:
