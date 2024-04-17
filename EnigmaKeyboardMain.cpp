@@ -73,7 +73,6 @@ int main()
             unsigned char inputCharacter = helper::ToUpper(keyProcessor.DetectKeypress());
             
             // if we receive an ESC key, print out encryption result then break from this loop and start over at the beginning of main()
-            // Then flush the std::cin buffer. Without doing this, previous characters get re-entered.
             if (inputCharacter == ESC_KEY)
             {
                 std::cout << "Escape key pressed. Ending Enigma.\n" << std::endl;

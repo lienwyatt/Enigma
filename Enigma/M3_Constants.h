@@ -22,7 +22,8 @@ namespace m3
 
     // Keys are the names of the reflector
     // Values are the reflector mappings. So 'A' in reflector C maps to 'F'
-    const std::map<unsigned char, std::string> reflectorMap = { {'B', "YRUHQSLDPXNGOKMIEBFZCWVJAT"}, 
+    const std::map<unsigned char, std::string> reflectorMap = { {'A', "EJMZALYXVBWFCRQUONTSPIKHGD"},
+                                                                {'B', "YRUHQSLDPXNGOKMIEBFZCWVJAT"}, 
                                                                 {'C', "FVPJIAOYEDRZXWGCTKUQSBNMHL"} };
 }
 

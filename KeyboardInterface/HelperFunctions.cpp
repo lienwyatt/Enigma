@@ -387,16 +387,21 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
     // If space bar is pressed proceed to encrytion.
     while (true)
     {
-        std::cout << "Choose a reflector model (B or C): ";
+        std::cout << "Choose a reflector model (A-C): ";
         input = _getche();
 
         std::cout << std::endl;
-        if (input == 'B' || input == 'b')
+        if (input == 'A' || input == 'a')
+        {
+            settings.reflectorType = 'A';
+            break;
+        }
+        else if (input == 'B' || input == 'b')
         {
             settings.reflectorType = 'B';
             break;
         }
-        if (input == 'C' || input == 'c')
+        else if (input == 'C' || input == 'c')
         {
             settings.reflectorType = 'C';
             break;
