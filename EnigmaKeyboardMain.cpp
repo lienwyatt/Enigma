@@ -3,8 +3,6 @@
 #include <chrono>
 #include <iostream>
 #include <conio.h>
-#include <chrono>
-#include <memory>
 
 #include "KeypressProcessor.h"
 #include "Enigma.h"
@@ -78,19 +76,10 @@ int main()
             // Then flush the std::cin buffer. Without doing this, previous characters get re-entered.
             if (inputCharacter == ESC_KEY)
             {
-                std::cout << "Escape key pressed. Ending encryption.\n" << std::endl;
+                std::cout << "Escape key pressed. Ending Enigma.\n" << std::endl;
                 std::cout << "Input text: " << std::endl << inputString << std::endl;
-                std::cout << "Output text: " << std::endl << outputString << std::endl;
-                std::cout << "Beginning new encryption" << std::endl << std::endl;
-
-                // this is a pretty ridiculous way of clearing the input buffer, but it is needed because we can't actaully tell how long it is.
-                // because we want this to work whether or not you are typing in the window, there can be various sizes of this buffer. 
-                //std::chrono::time_point<std::chrono::system_clock> endTime = std::chrono::system_clock::now() + std::chrono::milliseconds(50);
-                //while (std::chrono::system_clock::now() <= endTime)
-                //{
-                //   _getch();
-                //}
-                
+                std::cout << "Output text: " << std::endl << outputString << std::endl << std::endl;
+                std::cout << "Press Enter to restart Enigma." << std::endl << std::endl;
                 std::cin.ignore(INT_MAX, '\n');
                 break;
             }
