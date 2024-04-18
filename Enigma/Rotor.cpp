@@ -82,11 +82,7 @@ unsigned char Rotor::InverseTranslate(unsigned char inputChar) const
 
 unsigned char Rotor::Increment()
 {
-    bool turnedOver = false;
-    if (displayedCharacter_ == turnoverLetter_)
-    {
-        turnedOver =  true;
-    }
+
     //std::cout << std::endl << "displayedChar " << displayedCharacter_ << std::endl;
     displayedCharacter_++;
     displayedCharacter_ = (displayedCharacter_ - 'A') % NUM_CHARS_IN_ALPHABET + 'A';
