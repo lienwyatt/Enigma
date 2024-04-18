@@ -48,7 +48,7 @@ unsigned char Enigma::EncryptCharacter(char plaintextChar)
         leftRotor_.Increment();
     }
 
-    if (rightLetter == rightRotor_.GetTurnoverLetter() + 1 || (centerLetter == 'Z' && centerRotor_.GetTurnoverLetter() == 'A'))
+    if (rightLetter == rightRotor_.GetTurnoverLetter() + 1 || (rightLetter == 'A' && rightRotor_.GetTurnoverLetter() == 'Z'))
     {
         //the other way the center rotor increments
         centerRotor_.Increment();
