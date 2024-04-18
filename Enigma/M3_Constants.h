@@ -13,12 +13,15 @@ namespace m3
                                                 {2, "AJDKSIRUXBLHWTMCQGZNPYFVOE"},
                                                 {3, "BDFHJLCPRTXVZNYEIWGAKMUSQO"},
                                                 {4, "ESOVPZJAYQUIRHXLNFTGKDCMWB"},
-                                                {5, "VZBRGITYUPSDNHLXAWMJQOFECK"} };
+                                                {5, "VZBRGITYUPSDNHLXAWMJQOFECK"},
+                                                {6, "JPGVOUMFYQBENHZRDKASXLICTW"},
+                                                {7, "NZJHGRCXMYSWBOUFAIVLPEKQDT"},
+                                                {8, "FKQHTLXOCBJSPDZRAMEWNIUYGV"} };
 
     // These are positions where a rotor turns over the next rotor. 
     // ie rotor III turns over the next rotor when moving from 'V' to 'W'
     // A blank character is included because there is no 0 rotor so the string should be 1-indexed
-    const std::string turnover = " QEVJZ";
+    const std::string turnover = " QEVJZZZZ";
 
     // Keys are the names of the reflector
     // Values are the reflector mappings. So 'A' in reflector C maps to 'F'

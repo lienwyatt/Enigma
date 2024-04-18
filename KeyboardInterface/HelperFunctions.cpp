@@ -147,10 +147,10 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
     // If space bar is pressed proceed to encrytion.
     while (true)
     {
-        std::cout << "Choose a rotor number for the left rotor (1-5): ";
+        std::cout << "Choose a rotor number for the left rotor (1-8): ";
         input = _getche();
         std::cout << std::endl;
-        if (input >= '1' && input <= '5')
+        if (input >= '1' && input <= '8')
         {
             settings.leftRotor.rotorNumber = input - '0';
             break;
@@ -169,10 +169,10 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
     // If space bar is pressed proceed to encrytion.
     while (true)
     {
-        std::cout << "Choose a rotor number for the center rotor(1-5): ";
+        std::cout << "Choose a rotor number for the center rotor(1-8): ";
         input = _getche();
         std::cout << std::endl;
-        if (input >= '1' && input <= '5')
+        if (input >= '1' && input <= '8')
         {
             settings.centerRotor.rotorNumber = input - '0';
             break;
@@ -191,11 +191,11 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
     // If space bar is pressed proceed to encrytion.
     while (true)
     {
-        std::cout << "Choose a rotor number for the right rotor (1-5): ";
+        std::cout << "Choose a rotor number for the right rotor (1-8): ";
         input = _getche();
         std::cout << std::endl;
 
-        if (input >= '1' && input <= '5')
+        if (input >= '1' && input <= '8')
         {
             settings.rightRotor.rotorNumber = input - '0';
             break;
@@ -210,91 +210,6 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
         }
     }
 
-    // Prompt the user to choose a starting letter.
-    // If space bar is pressed proceed to encrytion.
-    while (true)
-    {
-        std::cout << "Choose a starting letter for the left rotor (A-Z): ";
-        input = _getche();
-        std::cout << std::endl;
-        if (input >= 'A' && input <= 'Z')
-        {
-            settings.leftRotor.startingLetter = input;
-            break;
-        }
-        else if (input >= 'a' && input <= 'z')
-        {
-            input += 'A' - 'a';
-            settings.leftRotor.startingLetter = input;
-            break;
-        }
-        else if (input == ' ')
-        {
-            return settings;
-        }
-        else
-        {
-            std::cout << "Incorrect input" << std::endl;
-        }
-    }
-
-    // Prompt the user to choose a starting letter.
-    // If space bar is pressed proceed to encrytion.
-    while (true)
-    {
-        std::cout << "Choose a starting letter for the center rotor (A-Z): ";
-        input = _getche();
-        std::cout << std::endl;
-
-        if (input >= 'A' && input <= 'Z')
-        {
-            settings.centerRotor.startingLetter = input;
-            break;
-        }
-        else if (input >= 'a' && input <= 'z')
-        {
-            input += 'A' - 'a';
-            settings.centerRotor.startingLetter = input;
-            break;
-        }
-        else if (input == ' ')
-        {
-            return settings;
-        }
-        else
-        {
-            std::cout << "Incorrect input" << std::endl;
-        }
-    }
-
-    // Prompt the user to choose a starting letter.
-    // If space bar is pressed proceed to encrytion.
-    while (true)
-    {
-        std::cout << "Choose a starting letter for the right rotor (A-Z): ";
-        input = _getche();
-        std::cout << std::endl;
-
-        if (input >= 'A' && input <= 'Z')
-        {
-            settings.rightRotor.startingLetter = input;
-            break;
-        }
-        else if (input >= 'a' && input <= 'z')
-        {
-            input += 'A' - 'a';
-            settings.rightRotor.startingLetter = input;
-            break;
-        }
-        else if (input == ' ')
-        {
-            return settings;
-        }
-        else
-        {
-            std::cout << "Incorrect input" << std::endl;
-        }
-    }
 
     // Prompt the user to choose a Ring Setting.
     // If space bar is pressed proceed to encrytion.
@@ -408,6 +323,93 @@ EnigmaSettings helper::GetEnigmaSettingsFromUser()
         }
         else if (input == ' ')
         { 
+            return settings;
+        }
+        else
+        {
+            std::cout << "Incorrect input" << std::endl;
+        }
+    }
+
+
+    // Prompt the user to choose a starting letter.
+    // If space bar is pressed proceed to encrytion.
+    while (true)
+    {
+        std::cout << "Choose a starting letter for the left rotor (A-Z): ";
+        input = _getche();
+        std::cout << std::endl;
+        if (input >= 'A' && input <= 'Z')
+        {
+            settings.leftRotor.startingLetter = input;
+            break;
+        }
+        else if (input >= 'a' && input <= 'z')
+        {
+            input += 'A' - 'a';
+            settings.leftRotor.startingLetter = input;
+            break;
+        }
+        else if (input == ' ')
+        {
+            return settings;
+        }
+        else
+        {
+            std::cout << "Incorrect input" << std::endl;
+        }
+    }
+
+    // Prompt the user to choose a starting letter.
+    // If space bar is pressed proceed to encrytion.
+    while (true)
+    {
+        std::cout << "Choose a starting letter for the center rotor (A-Z): ";
+        input = _getche();
+        std::cout << std::endl;
+
+        if (input >= 'A' && input <= 'Z')
+        {
+            settings.centerRotor.startingLetter = input;
+            break;
+        }
+        else if (input >= 'a' && input <= 'z')
+        {
+            input += 'A' - 'a';
+            settings.centerRotor.startingLetter = input;
+            break;
+        }
+        else if (input == ' ')
+        {
+            return settings;
+        }
+        else
+        {
+            std::cout << "Incorrect input" << std::endl;
+        }
+    }
+
+    // Prompt the user to choose a starting letter.
+    // If space bar is pressed proceed to encrytion.
+    while (true)
+    {
+        std::cout << "Choose a starting letter for the right rotor (A-Z): ";
+        input = _getche();
+        std::cout << std::endl;
+
+        if (input >= 'A' && input <= 'Z')
+        {
+            settings.rightRotor.startingLetter = input;
+            break;
+        }
+        else if (input >= 'a' && input <= 'z')
+        {
+            input += 'A' - 'a';
+            settings.rightRotor.startingLetter = input;
+            break;
+        }
+        else if (input == ' ')
+        {
             return settings;
         }
         else
