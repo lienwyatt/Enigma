@@ -9,10 +9,14 @@ The Enigma machine was a cipher device used to encode and decode German messages
 ## Instructions
 The files needed to run the application without keyboard animations are contained in the 'Release' folder. That folder contains 64-bit and 32-bit executibles. To get the animations to dispay on the keyboard, you will also need to download [Razer Synapse 3](https://www.razer.com/synapse-3) and follow [these instructions](https://mysupport.razer.com/app/answers/detail/a_id/1758/~/how-to-use-chroma-connect) to make sure the Chroma Connect module is installed. 
 
-https://github.com/lienwyatt/Enigma-Keyboard/assets/31666811/e23cc895-4dbc-4ba5-aca0-58f6c432f26a
+[![Keyboard Demo](https://github.com/lienwyatt/Enigma-Keyboard/assets/31666811/2f66a08c-2e08-463f-9172-255f7b480b57)](https://youtu.be/S3wwKLhFq8w)
+
+
+[![Decryption Example](https://github.com/lienwyatt/Enigma-Keyboard/assets/31666811/ccaaa3a3-f922-4f39-9044-3a5b2cb99743)](https://www.youtube.com/watch?v=jrvAljH7J1c)
 
 ## Method
 Each key is registered as a hotkey to detect keypresses. This allows the keyboard to continue displaying the encrypted letters while using other applications. A different Chroma animation was created for each letter using the online [Chroma Editor](https://chroma.razer.com/ChromaEditor/). Swapping between these animations was done done with the official Razer Chroma C++ API and [sample app](https://github.com/razerofficial/CSDK_SampleApp). The sample app was forked as a submodule and adapted for use in this project. 
+
 
 ![Unmodified. Owner: Alessandro Nassiri, License: https://creativecommons.org/licenses/by-sa/4.0/deed.en](https://github.com/lienwyatt/Enigma/assets/31666811/2764f0cb-efd2-4033-b092-6303df1ddd70)
 Image credit: Alessandro Nassiri. Unmodified. Image License: https://creativecommons.org/licenses/by-sa/4.0/deed.en
