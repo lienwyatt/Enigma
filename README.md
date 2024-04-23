@@ -7,7 +7,7 @@ This application allows the user to replicate the behavior of the Enigma machine
 The Enigma machine was a cipher device used to encode and decode German messages during WWII. The cipher was famously cracked by a team of codebreakers led by Alan Turing, helping the Allies to win WWII. For some good background on Enigma, check out [this video](https://www.youtube.com/watch?v=G2_Q9FoD-oQ).
 
 ## Instructions
-The files needed to run the application without keyboard animations are contained in the 'Release' folder. That folder contains 64-bit and 32-bit executibles. To get the animations to dispay on the keyboard, you will also need to download [Razer Synapse 3](https://www.razer.com/synapse-3) and follow [these instructions](https://mysupport.razer.com/app/answers/detail/a_id/1758/~/how-to-use-chroma-connect) to make sure the Chroma Connect module is installed. 
+The files needed to run the application are contained in the 'Release' folder. That folder contains Windows 64-bit and 32-bit executables. To also get the animations to display on a Razer keyboard, you will need to download [Razer Synapse 3](https://www.razer.com/synapse-3) and follow [these instructions](https://mysupport.razer.com/app/answers/detail/a_id/1758/~/how-to-use-chroma-connect) to make sure the Chroma Connect module is installed. A Razer keyboard is not needed to perform encryption with the console application. 
 
 [![Keyboard Demo](https://github.com/lienwyatt/Enigma-Keyboard/assets/31666811/2f66a08c-2e08-463f-9172-255f7b480b57)](https://youtu.be/S3wwKLhFq8w)
 
@@ -17,7 +17,12 @@ The files needed to run the application without keyboard animations are containe
 ## Method
 Each key is registered as a hotkey to detect keypresses. This allows the keyboard to continue displaying the encrypted letters while using other applications. A different Chroma animation was created for each letter using the online [Chroma Editor](https://chroma.razer.com/ChromaEditor/). Swapping between these animations was done done with the official Razer Chroma C++ API and [sample app](https://github.com/razerofficial/CSDK_SampleApp). The sample app was forked as a submodule and adapted for use in this project. 
 
-
-
+## References
+Sample messages for decryption can be found here: \
+http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages \
+Details of Enigma design were taken from here: \
+https://www.ciphermachinesandcryptology.com/en/enigmatech.htm \
+https://en.wikipedia.org/wiki/Enigma_rotor_details \
+https://en.wikipedia.org/wiki/Enigma_machine
 
 
