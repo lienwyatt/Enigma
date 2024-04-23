@@ -1,9 +1,31 @@
+/*
+ MIT License
 
-#include <string>
-#include <iostream>
+Copyright (c) 2024 Wyatt Lien
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 
 #include "Enigma.h"
 #include "M3_Constants.h"
+#include <string>
+#include <iostream>
 
 Enigma::Enigma(const EnigmaSettings& initialSettings) : rightRotor_(initialSettings.rightRotor),
                                                         centerRotor_(initialSettings.centerRotor),
@@ -56,49 +78,36 @@ unsigned char Enigma::EncryptCharacter(char plaintextChar)
 
  
     unsigned char character = toupper(plaintextChar);
-    //std::cout << "translating pre-plugboard  " << character << std::endl;
-    //the input character is sent through the plugboard
+
+    // the input character is sent through the plugboard
     if (plugboard_.find(character) != plugboard_.end())
     {
         character = plugboard_[character];
     }
-    //std::cout << std::endl << "translating  " << character << std::endl;
 
-    //the character is sent through the three rotors
+    // the character is sent through the three rotors
     character = rightRotor_.Translate(character);
-    //std::cout << " result " << character << std::endl << "translating  " << character << std::endl;
     character = centerRotor_.Translate(character);
-    //std::cout << " result " << character << std::endl << "translating  " << character << std::endl;
     character = leftRotor_.Translate(character);
-    //std::cout << " result " << character << std::endl;
 
-    //std::cout << "reflecting " << character << " to " << reflector_[character - 'A'] << std::endl;
-    //send the character through the reflector
+    // send the character through the reflector
     character = reflector_[character - 'A'];
 
-    //send the character back through all three rotors in the opposite direction
-    //std::cout << "translating  " << character << std::endl;
+    // send the character back therough the three rotors
     character = leftRotor_.InverseTranslate(character);
-    //std::cout << " result " << character << std::endl << "translating  " << character << std::endl;
     character = centerRotor_.InverseTranslate(character);
-    //std::cout << " result " << character << std::endl << "translating  " << character << std::endl;
     character = rightRotor_.InverseTranslate(character);
-    //std::cout << " result " << character << std::endl;
 
-    //std::cout << "Before plugboad " << character << std::endl;
     if (plugboard_.find(character) != plugboard_.end())
     {
         character = plugboard_[character];
     }
-
-    //std::cout << "result is " << character << std::endl;
 
     return character;
 }
 
 
-//note that this function also performs a decryption when a 
-//ciphertext string is passed as a parameter
+// note that this function also performs a decryption when a ciphertext string is passed as a parameter
 std::string Enigma::EncryptString(const std::string& plaintextStr)
 {
     std::string ciphertextStr;

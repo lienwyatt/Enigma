@@ -91,8 +91,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y chroma\*.pdb "$(outdir)"
-copy /y chroma\*.dll "$(outdir)" </Command>
+      <Command>copy /y chroma\*.pdb "$(outdir)" copy /y chroma\*.dll "$(outdir)" </Command>
+	  <Command>xcopy Animations\ "$(outdir)\Animations\" /E /I /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -112,8 +112,8 @@ copy /y chroma\*.dll "$(outdir)" </Command>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y chroma\*.pdb "$(outdir)"
-copy /y chroma\*.dll "$(outdir)" </Command>
+      <Command>copy /y chroma\*.pdb "$(outdir)" copy /y chroma\*.dll "$(outdir)" </Command>
+	  <Command>xcopy Animations\ "$(outdir)\Animations\" /E /I /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -129,8 +129,8 @@ copy /y chroma\*.dll "$(outdir)" </Command>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y chroma\*.pdb "$(outdir)"
-copy /y chroma\*.dll "$(outdir)" </Command>
+      <Command>copy /y chroma\*.pdb "$(outdir)" copy /y chroma\*.dll "$(outdir)" </Command>
+	  <Command>xcopy Animations\ "$(outdir)\Animations\" /E /I /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -150,8 +150,8 @@ copy /y chroma\*.dll "$(outdir)" </Command>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y chroma\*.pdb "$(outdir)"
-copy /y chroma\*.dll "$(outdir)" </Command>
+      <Command>copy /y chroma\*.pdb "$(outdir)" copy /y chroma\*.dll "$(outdir)" </Command>
+	  <Command>xcopy Animations\ "$(outdir)\Animations\" /E /I /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -1,12 +1,35 @@
+/*
+ MIT License
+
+Copyright (c) 2024 Wyatt Lien
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 #include "KeypressProcessor.h"
 #include "windows.h"
 #include <iostream>
 
-
-//ASCII ESC key
+// ASCII ESC key
 extern const unsigned char ESC_KEY = 0x1B;
 
-//semi-arbitrary value to add to IDs to make it clear which IDs had [SHIFT] key pressed
+// semi-arbitrary value to add to IDs to make it clear which IDs had [SHIFT] key pressed
 const int SHIFT_ID_OFFSET = 100;
 
 KeypressProcessor::KeypressProcessor() : initialized_(false)
@@ -21,11 +44,11 @@ KeypressProcessor::KeypressProcessor() : initialized_(false)
             input.type = INPUT_KEYBOARD;
             input.ki.wVk = character;
 
-            //use character as the ID 
+            // use character as the ID 
             RegisterHotKey(NULL, character, 0, character);
 
-            //we also need to make sure that typing a capital letter doesnt break stuff. 
-            //That means pressing shift at the same time should also be registered as a hotkey.
+            // we also need to make sure that typing a capital letter doesnt break stuff. 
+            // That means pressing shift at the same time should also be registered as a hotkey.
             RegisterHotKey(NULL, character + SHIFT_ID_OFFSET, MOD_SHIFT, character);
 
             character += 1;
@@ -111,7 +134,7 @@ unsigned char KeypressProcessor::DetectKeypress()
                 UnregisterHotKey(NULL, character);
             }
             
-            //duplicate the key pressed because the hotkey will not actually pass the value to the OS
+            // duplicate the key pressed because the hotkey will not actually pass the value to the OS by itself
             INPUT input;
             ZeroMemory(&input, sizeof(input));
             input.type = INPUT_KEYBOARD;
