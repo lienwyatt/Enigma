@@ -4,7 +4,7 @@
 This application allows the user to replicate the behavior of the WWII Enigma machine on a Razer keyboard. When a key is pressed, the corresponding encrypted cyphertext letter lights up on the keyboard. A window launches where Enigma settings can be customized. The window can then be minimized and the encryption will continue to display on the keyboard while other applications are used. The application can still be run and used to perform Enigma encryption without a Razer keyboard. In that case the encryption will only be displayed to the terminal window and not also on the keyboard. 
 
 ## Background
-The Enigma machine was a cipher device used to encode and decode German messages during WWII. The cipher was famously cracked by a team of codebreakers led by Alan Turing, helping the Allies to win WWII. For some good background on Enigma, check out [this video](https://www.youtube.com/watch?v=G2_Q9FoD-oQ).
+The Enigma machine was a cipher device used to encode and decode German messages during WWII. The cipher was famously cracked by a team of codebreakers led by Alan Turing, helping the Allies to win WWII. Enigma was featured in the film *The Imitation Game* (2014). For additional background on Enigma, check out [this video](https://www.youtube.com/watch?v=G2_Q9FoD-oQ).
 
 ## Demonstrations
 
@@ -20,11 +20,15 @@ The files needed to run the application are contained in the 'Release' folder. T
 Each key is registered as a hotkey to detect keypresses. This allows the keyboard to continue displaying the encrypted letters while using other applications. A different Chroma animation was created for each letter using the online [Chroma Editor](https://chroma.razer.com/ChromaEditor/). Swapping between these animations was done done with the official Razer Chroma C++ API and [sample app](https://github.com/razerofficial/CSDK_SampleApp). The sample app was forked as a submodule and adapted for use in this project. 
 
 ## References
-Sample messages for decryption can be found here: \
-http://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages \
-Details of Enigma design were taken from here: \
-https://www.ciphermachinesandcryptology.com/en/enigmatech.htm \
-https://en.wikipedia.org/wiki/Enigma_rotor_details \
-https://en.wikipedia.org/wiki/Enigma_machine
+#### Sample messages for decryption can be found here
 
+“Enigma/Sample Messages.” Enigma/Sample Messages, Franklin Heath Ltd, 17 June 2022, https://wiki.franklinheath.co.uk/index.php/Enigma/Sample_Messages.  
+
+#### Enigma operation details were taken from the following sources
+
+Rijmenenants, Dirk. "Technical Details of the Enigma Machine." CYPHER MACHINES AND CRYPTOGRAPHY, 11 January 2024, https://www.ciphermachinesandcryptology.com/en/enigmatech.htm. 
+
+"Enigma rotor details" Wikipedia, Wikimedia Foundation, 15 March 2024, https://en.wikipedia.org/wiki/Enigma_rotor_details. 
+
+"Enigma machine" Wikipedia, Wikimedia Foundation, 21 January 2024, https://en.wikipedia.org/wiki/Enigma_machine. 
 
